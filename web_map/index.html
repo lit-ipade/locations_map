@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa de Localizações</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <div class="toolbar">
+        <input id="appIdFilter" placeholder="Filtrar por appId..." />
+        <button onclick="loadLocations()">Atualizar</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./src/script.js"></script>
+</body>
+
+</html>

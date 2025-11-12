@@ -1,0 +1,7 @@
+# Node
+api/node_modules/
+api/.env
+
+# Sistema
+.DS_Store
+*.log

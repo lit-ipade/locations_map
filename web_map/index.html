@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Mapa de Localizações</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mapa de Localizações – Apps Flutter</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./src/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
-    <div class="toolbar">
-        <input id="appIdFilter" placeholder="Filtrar por appId..." />
-        <button onclick="loadLocations()">Atualizar</button>
-    </div>
-    <div id="map"></div>
+    <div id="container">
+        <div class="map-section">
+            <div class="header">
+                <h1>Mapa de Localizações</h1>
+                <div class="total" id="totalUsers">Carregando...</div>
+            </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <div class="controls" style="justify-content:flex-start;">
+                <label><input type="checkbox" id="selectAllApps" checked /> Selecionar todos</label>
+            </div>
+
+            <div id="map"></div>
+            <div class="legend" id="legend">• Ponto = usuário | Pontos maiores = mais usuários no mesmo local</div>
+        </div>
+
+        <div class="apps-box">
+            <div class="apps-header"><b>Filtrar por App</b></div>
+            <div id="appsList">Carregando...</div>
+        </div>
+
+        <!-- Botão de informação -->
+        <button id="infoBtn" class="info-btn"><i class="fas fa-info"></i></button>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Como funciona</h2>
+            <p>✔ Use as checkboxes na lateral para filtrar os aplicativos exibidos no mapa.</p>
+            <p>✔ O tamanho do círculo indica o número de usuários no mesmo endereço.</p>
+            <p>✔ Pontos maiores indicam múltiplos usuários no mesmo local.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="./src/script.js"></script>
 </body>
 

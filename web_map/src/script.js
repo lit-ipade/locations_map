@@ -1,5 +1,4 @@
-// 🔹 Configure aqui o endpoint da sua API
-const API_URL = "http://localhost:5000/api/locations";
+const API_URL = "https://locations-map.onrender.com/api/locations";
 
 const map = L.map('map').setView([-14.2350, -51.9253], 4);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {

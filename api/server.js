@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("API de Localizações rodando 🚀");
 });
 
-app.post("/", (req, res) => {
+app.post("/locations", (req, res) => {
   res.send("API de envio funcionando");
 });
 

@@ -17,12 +17,16 @@ app.get("/", (req, res) => {
   res.send("API de Localizações rodando 🚀");
 });
 
+app.post("/", (req, res) => {
+  res.send("API de envio funcionando");
+});
+
 // Conexão Mongo
 mongoose.connect(process.env.MONGODB_URI, {
   dbName: "locations"
 })
-.then(() => console.log("Conectado ao MongoDB"))
-.catch(err => console.error("Erro MongoDB:", err));
+  .then(() => console.log("Conectado ao MongoDB"))
+  .catch(err => console.error("Erro MongoDB:", err));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));

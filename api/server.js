@@ -17,8 +17,8 @@ app.get("/", (req, res) => {
   res.send("API de Localizações rodando 🚀");
 });
 
-app.post("/locations", (req, res) => {
-  res.send("API de envio funcionando");
+app.post("/", (req, res) => {
+  console.log("📍 Nova localização:", req.body);
 });
 
 // Conexão Mongo
